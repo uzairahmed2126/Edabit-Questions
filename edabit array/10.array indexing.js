@@ -1,14 +1,10 @@
-function valueAt(arr,ind){
-    return console.log(arr[findindexOf(ind)]);
-}
-// function valueAt(array, value) {
-//     var index =console.log (array.indexOf(value));
-//     if (index === -1) {
-//       return "Value not found in array";
-//     } else {
-//       return array[index];
-//     }
-//   }
+// function valueAt(arr,ind){
+    // return console.log(arr[indexOf(ind)]);
+// }
+function valueAt(array, value) {
+console.log (Math.round(value));
+    
+  }
   
 valueAt([1, 2, 3, 4, 5, 6], 10 / 2) 
 
