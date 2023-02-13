@@ -1,5 +1,5 @@
-function makePair([p1,p2]){    
-return console.log(p1,p2);
+function makePair(p1){    
+return console.log(p1);
 }
 
 makePair([1, 2])
@@ -10,7 +10,6 @@ function mPair(arr){
     return console.log(arr[0],arr[1]);
 
     }
-    // return p1,p2;
     
     mPair([1, 2])
     mPair([51, 21]) 
