@@ -1,9 +1,15 @@
-function getFirstValue([p1,p2,p3]){
-console.log(p1);
+function getFirstValue(arr){
+// let element;
+// for (let index = 0; index < 1; index++) {
+//     element = arr[index];
+// }
+// return element
+// return arr[0]
+return arr.shift()
 }
 
-getFirstValue([1, 2, 3]); 
+console.log(getFirstValue([1, 2, 3])); 
 
-getFirstValue([80, 5, 100]); 
+console.log(getFirstValue([80, 5, 100])); 
 
-getFirstValue([-500, 0, 50]); 
+console.log(getFirstValue([-500, 0, 50])); 
