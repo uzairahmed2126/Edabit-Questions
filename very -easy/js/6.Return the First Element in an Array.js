@@ -8,13 +8,6 @@ function getFirstValue(firstValue) {
         a = firstValue[0]
     }
     return a;
-    // for (let i = 0; i < firstValue.length; i++) {
-    //     return firstValue[i];
-    // }
-
-    // // Handle the case where the array is empty
-    // console.error("Array is empty.");
-    // return undefined;
 }
 
 console.log(getFirstValue([1, 2, 3]))

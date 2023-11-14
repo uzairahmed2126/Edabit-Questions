@@ -1,7 +1,10 @@
-const remainder = (...divide) =>{
-    return divide[0]%divide[1]
+function remainder(first, second) {
+    // return divide[0]%divide[1]
     // return Number.parseInt(divide[0]%divide[1])
     // return Math.floor(divide[0] % divide[1]);
+    let a = 0;
+    a = first % second;
+    return a
 }
 console.log(remainder(1, 3)) //1
 console.log(remainder(3, 4)) //3
