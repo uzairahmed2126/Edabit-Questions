@@ -7,7 +7,9 @@ function addBackSlash(str) {
             result += str[i];
         }
     }
-
+    const createDiv = document.createElement('div');
+    createDiv.innerText = result;
+    document.body.append(createDiv);
     return result;
 }
-console.log(addBackSlash('Add a Consecutive List of Numbers'));
+console.log(addBackSlash(prompt("Enter your string")));
