@@ -23,4 +23,3 @@ let result1 = []
 for (let i = arr1.length - 1; i >= 0; i--) {
     console.log(result1.push(arr1[i]));
 }
-
