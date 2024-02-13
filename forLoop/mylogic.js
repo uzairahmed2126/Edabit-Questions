@@ -9,6 +9,9 @@ function addBackSlash(str) {
     }
     const createDiv = document.createElement('div');
     createDiv.innerText = result;
+    createDiv.style.color='#f222ab';
+    createDiv.style.background='#00b0f0';
+    createDiv.style.fontSize='30px';
     document.body.append(createDiv);
     return result;
 }
