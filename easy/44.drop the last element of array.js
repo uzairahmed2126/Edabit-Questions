@@ -1,6 +1,8 @@
 function dropRight(arr, n=1) {
   if (n <= 0) {
-    return arr.slice();
+    // return arr.slice();
+    arr.pop();
+    return arr;
   } else if (n >= arr.length) {
     return [];
   } else {

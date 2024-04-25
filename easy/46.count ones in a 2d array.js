@@ -1,12 +1,16 @@
 function countOnes(arr) {
-  let flatedArr = arr.flat();
-  let res = 0;
-  for (let i = 0; i < flatedArr.length; i++) {
-    if (flatedArr[i] === 1) {
-      res += flatedArr[i];
+  let count = 0;
+  function recursiveCount(arr) {
+    for (let i = 0; i < arr.length; i++) {
+      if (Array.isArray(arr[i])) {
+        recursiveCount(arr[i]);
+      } else if (arr[i] === 1) {
+        count++;
+      }
     }
   }
-  return res;
+  recursiveCount(arr);
+  return count;
 }
 console.log(
   countOnes([

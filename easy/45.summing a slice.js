@@ -1,6 +1,6 @@
-function sliceSum(arr, n) {
+function sliceSum(arr, start, n) {
   //   let a = 0;
-  //   for (let i = 0; i < n; i++) {
+  //   for (let i = start; i < n; i++) {
   //     a += arr[i];
   //   }
   //   return a;
