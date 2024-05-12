@@ -11,23 +11,23 @@
 
 // Example
 function keyboardMistakes(val) {
-  //   const corrections = {
-  //     4: "A",
-  //     5: "S",
-  //     0: "O",
-  //     1: "I",
-  //   };
-  //   let correctedTxt = "";
-  //   for (let i = 0; i < val.length; i++) {
-  //     let char = val[i];
-  //     correctedTxt += corrections[char] ? corrections[char] : char;
-  //   }
-  //   return correctedTxt;
-  return val
-    .replace(/4/g, "A")
-    .replace(/5/g, "S")
-    .replace(/0/g, "O")
-    .replace(/1/g, "I");
+  const corrections = {
+    4: "A",
+    5: "S",
+    0: "O",
+    1: "I",
+  };
+    let correctedTxt = "";
+    for (let i = 0; i < val.length; i++) {
+      let char = val[i];
+      correctedTxt += corrections[char] ? corrections[char] : char;
+    }
+    return correctedTxt;
+    return val
+      .replace(/4/g, "A")
+      .replace(/5/g, "S")
+      .replace(/0/g, "O")
+      .replace(/1/g, "I");
 }
 console.log(keyboardMistakes("MUB45H1R")); //➞ "MUBASHIR"
 console.log(keyboardMistakes("DUBL1N")); //➞ "DUBLIN"
