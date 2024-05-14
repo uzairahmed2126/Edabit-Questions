@@ -6,12 +6,19 @@
 // "None" returns an array without any modification.
 // Examples
 function ascDesNone(arr, str) {
-  if (str === "Asc") {
-    return arr.sort((a, b) => a - b);
-  } else if (str === "Des") {
-    return arr.sort((a, b) => b - a);
-  }
-  return arr;
+  //   if (str === "Asc") {
+  //     return arr.sort((a, b) => a - b);
+  //   } else if (str === "Des") {
+  //     return arr.sort((a, b) => b - a);
+  //   }
+  //   return arr;
+  const sortFuncs = {
+    Asc: (a, b) => a - b,
+    Des: (a, b) => b - a,
+    None: () => 0,
+  };
+
+  return arr.sort(sortFuncs[str]);
 }
 console.log(ascDesNone([4, 3, 2, 1], "Asc")); //➞ [1, 2, 3, 4]
 console.log(ascDesNone([7, 8, 11, 66], "Des")); //➞ [66, 11, 8, 7]
