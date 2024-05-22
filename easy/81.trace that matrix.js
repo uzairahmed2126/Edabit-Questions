@@ -14,11 +14,25 @@
 
 // Examples
 function trace(arr) {
-  let total = 0;
-  for (let i = 0; i < arr.length; i++) {
-    total += arr[i][i];
+  // let total = 0;
+  // for (let i = 0; i < arr.length; i++) {
+  //   total += arr[i][i];
+  // }
+  // return total;
+  let sum = 0;
+  // for (let i = 0; i < arr.length; i++) {
+  //   for (let j = 0; j < arr[i].length; j++) {
+  //     if (arr[i] === arr[j]) {
+  //       sum += arr[i][j];
+  //     }
+  //   }
+  // }
+  let indexCount = 0;
+  while (indexCount < arr.length) {
+    sum += arr[indexCount][indexCount];
+    indexCount++;
   }
-  return total;
+  return sum;
 }
 console.log(
   trace([
