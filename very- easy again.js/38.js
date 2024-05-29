@@ -10,7 +10,7 @@ function search(arr, findIndex) {
   //     }
   //   }
   //   return -1;
-    return arr.indexOf(findIndex);
+  return arr.indexOf(findIndex);
 }
 console.log(search([1, 5, 3], 5)); //➞ 1
 console.log(search([9, 8, 3], 3)); //➞ 2
