@@ -5,7 +5,7 @@
 function sumArray(arr) {
   let result = 0;
   //   arr.forEach((element) => (result += element));
-  //   return result;
+  //   return result ;
   //   return arr.reduce((acc, curr) => acc + curr, 0);
   //   for (let i = 0; i < arr.length; i++) {
   //     result += arr[i];
