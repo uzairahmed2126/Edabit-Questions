@@ -1,7 +1,6 @@
 // Shapes With N Sides
 // Create a function that takes a whole number as input and returns the shape with that number's amount of sides. Here are the expected outputs to get from these inputs.
 
-
 // Inputs	Outputs
 // 1	"circle"
 // 2	"semi-circle"
