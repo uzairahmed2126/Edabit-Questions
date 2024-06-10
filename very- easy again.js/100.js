@@ -3,13 +3,14 @@
 
 // Examples
 function accepted(arr) {
-//   let newArr = [];
-//   for (let i = 0; i < arr.length; i++) {
-//     if (arr[i][0] !== "C") {
-//       newArr.push(arr[i]);
-//     }
-//   }
-  return arr.filter((element, index) => element[(index = 0)] !== "C");
+  //   let newArr = [];
+  //   for (let i = 0; i < arr.length; i++) {
+  //     if (arr[i][0] !== "C") {
+  //       newArr.push(arr[i]);
+  //     }
+  //   }
+  //   return arr.filter((element, index) => element[(index = 0)] !== "C");
+  return arr.filter((word) => !/^C/.test(word));
 }
 console.log(accepted(["Ducks", "Bears", "Cats"])); //➞ ["Ducks", "Bears"]
 
