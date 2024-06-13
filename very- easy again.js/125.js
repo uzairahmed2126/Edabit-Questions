@@ -9,8 +9,8 @@ function convertCartesian(xCoords, yCoords) {
   //   }
   //   return result;
   //   return xCoords.map((x, i) => [x, yCoords[i]]);
-  return xCoords.reduce((acc, x, i) => {
-    acc.push([x, yCoords[i]]);
+  return xCoords.reduce((acc, cur, i) => {
+    acc.push([cur, yCoords[i]]);
     return acc;
   }, []);
 }
