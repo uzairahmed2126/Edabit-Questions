@@ -5,12 +5,18 @@
 
 function checkAllEven(arr) {
   //   return arr.every((x) => x % 2 === 0);
-  let countdown = 0;
-  while (countdown < arr.length) {
-    if (arr[countdown] % 2 !== 0) {
+  //   let countdown = 0;
+  //   while (countdown < arr.length) {
+  //     if (arr[countdown] % 2 !== 0) {
+  //       return false;
+  //     }
+  //     countdown++;
+  //   }
+  //   return true;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 !== 0) {
       return false;
     }
-    countdown++;
   }
   return true;
 }
