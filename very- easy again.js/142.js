@@ -3,13 +3,15 @@
 
 // Examples
 function mean(arr) {
-  let total = 0;
-  for (let i = 0; i < arr.length; i++) {
-    total += arr[i];
-  }
-  let meanValue = total / arr.length;
-  //   return +(total / arr.length).toFixed(1);
-  return Math.round(meanValue * 10) / 10;
+  //   let total = 0;
+  //   for (let i = 0; i < arr.length; i++) {
+  //     total += arr[i];
+  //   }
+  //   let meanValue = total / arr.length;
+  //   //   return +(total / arr.length).toFixed(1);
+  //   return Math.round(meanValue * 10) / 10;
+  const sum = arr.reduce((acc, cur) => acc + cur, 0);
+  return Math.round((sum / arr.length) * 10) / 10;
 }
 console.log(mean([1, 6, 6, 7, 8, 8, 9, 10, 10])); //➞ 7.2
 console.log(mean([1, 3, 8, 9, 9, 10])); //➞ 6.7
