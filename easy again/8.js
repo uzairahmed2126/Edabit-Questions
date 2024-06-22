@@ -4,10 +4,11 @@
 // Examples
 function sumOfCubes(arr) {
   let result = 0;
-  for (let i = 0; i < arr.length; i++) {
-    result += arr[i] * arr[i] * arr[i];
-  }
-  return result;
+  //   for (let i = 0; i < arr.length; i++) {
+  //     result += arr[i] * arr[i] * arr[i];
+  //   }
+  //   return result;
+  return arr.reduce((acc, cur) => acc + cur ** 3, 0);
 }
 console.log(sumOfCubes([1, 5, 9])); //➞ 855
 // Since 1^3 + 5^3 + 9^3 = 1 + 125 + 729 = 855
