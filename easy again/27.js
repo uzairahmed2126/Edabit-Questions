@@ -3,12 +3,19 @@
 
 // Examples
 function isSubset(arr1, arr2) {
-  for (let i = 0; i < arr1.length; i++) {
-    if (!arr2.includes(arr1[i])) {
-      return false;
+  //   for (let i = 0; i < arr1.length; i++) {
+  //     if (!arr2.includes(arr1[i])) {
+  //       return false;
+  //     }
+  //   }
+  //   return true;
+  let result = true;
+  arr1.forEach((element) => {
+    if (!arr2.includes(element)) {
+      result = false;
     }
-  }
-  return true;
+  });
+  return result;
 }
 console.log(isSubset([3, 2, 5], [5, 3, 7, 9, 2])); //➞ true
 console.log(isSubset([8, 9], [7, 1, 9, 8, 4, 5, 6])); //➞ true
