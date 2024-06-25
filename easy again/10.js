@@ -10,11 +10,19 @@ function calculateDifference(obj, value) {
   //     result += obj[key];
   //   }
   //   return result - value;
-  let convertIntoArray = Object.values(obj);
-  for (let i = 0; i < convertIntoArray.length; i++) {
-    result += convertIntoArray[i];
-  }
-  return result-value;
+  // let convertIntoArray = Object.values(obj);
+  // for (let i = 0; i < convertIntoArray.length; i++) {
+  //   result += convertIntoArray[i];
+  // }
+  // return result-value;
+  let arr = Object.values(object);
+  let total = arr.reduce((acc, cur) => acc + cur); //arrow function calles lembda
+  return total - val;
+  //   let result = 0;
+  //   for (let i = 0; i < arr.length; i++) {
+  //     result += arr[i];
+  //   }
+  //   return result - val;
 }
 console.log(calculateDifference({ "baseball bat": 20 }, 5)); //➞ 15
 console.log(calculateDifference({ skate: 10, painting: 20 }, 19)); //➞ 11
