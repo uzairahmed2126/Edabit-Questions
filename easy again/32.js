@@ -1,22 +1,31 @@
-// Burglary Series (10): Calculate Difference
-// The insurance guy calls again and apologizes. They found another policy made by your spouse, but this one is limited to cover a particular maximum in losses (for example, 50,000€). You send a bill to your spouse for the difference you lost.
+// Snail Race
+// Steve and Maurice have racing snails. They each have three, a slow s, medium m and fast f one. Although Steve's snails are all a bit stronger than Maurice's, Maurice has a trick up his sleeve. His plan is
 
-// Given an object of the stolen items and a limit, return the difference between the total value of those items and the limit of the policy.
+// Round 1: [s, f] Sacrifice his slowest snail against Steve's fastest.
+// Round 2: [m, s] Use his middle snail against Steve's slowest.
+// Round 3: [f, m] Use his fastest snail against Steve's middle.
+// Create a function that determines whether Maurice's plan will work by outputting true if Maurice wins 2/3 games.
 
+// The function inputs:
+
+// Array 1: [s, m, f] for Maurice.
+// Array 2: [s, m, f] for Steve.
 // Examples
-function calculateDifference(object, val) {
-  let arr = Object.values(object);
-  let total = arr.reduce((acc, cur) => acc + cur);//arrow function calles lembda
-  return total - val;
-  //   let result = 0;
-  //   for (let i = 0; i < arr.length; i++) {
-  //     result += arr[i];
-  //   }
-  //   return result - val;
+function mauriceWins(mourice, steve) {
+  let round1 = mourice[0] > steve[2];
+  let round2 = mourice[1] > steve[0];
+  let round3 = mourice[2] > steve[1];
+  let mouricewinscount = round1 + round2 + round3 >= 2;
+  return mouricewinscount;
 }
-console.log(calculateDifference({ "baseball bat": 20 }, 5)); //➞ 15
-console.log(calculateDifference({ skate: 10, painting: 20 }, 19)); //➞ 11
-console.log(calculateDifference({ skate: 200, painting: 200, shoes: 1 }, 400)); //➞ 1
+console.log(mauriceWins([3, 5, 10], [4, 7, 11])); //➞ true
+// Since the matches are (3, 11), (5, 4) and (10, 7), Maurice wins 2 out of 3.
+
+console.log(mauriceWins([6, 8, 9], [7, 12, 14])); //➞ false
+// Since the matches are (6, 14), (8, 7) and (9, 12), Steve wins 2 out of 3.
+
+console.log(mauriceWins([1, 8, 20], [2, 9, 100])); //➞ true
 // Notes
-// The object will always contain items (no empty objects).
-// The sum of the items will always be greater than the limit.
+// Maurice wins if his competing snail's speed strictly exceeds Steve's snail's speed.
+// Steve will always play in this order: [f, s, m].
+// The order you'll get the snails is always in ascending order.
