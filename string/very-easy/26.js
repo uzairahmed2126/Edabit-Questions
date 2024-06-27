@@ -6,13 +6,13 @@ function firstLast(str) {
   //   return str[0] + str[str.length - 1];
   return str.slice(0, 1) + str.slice(-1);
 }
-console.log(firstLast("ganesh")); //➞ "gh"
+console.log(firstLast("uzair")); //➞ "ur"
 
-console.log(firstLast("kali")); //➞ "ki"
+console.log(firstLast("ahmed")); //➞ "ad"
 
-console.log(firstLast("shiva")); //➞ "sa"
+console.log(firstLast("yunus")); //➞ "ys"
 
-console.log(firstLast("vishnu")); //➞ "vu"
+console.log(firstLast("saif")); //➞ "sf"
 
 console.log(firstLast("durga")); //➞ "da"
 // Notes
