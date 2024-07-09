@@ -9,15 +9,15 @@ function longestString(str1, str2) {
   let combined = str1 + str2;
   let uniqueChars = new Set(combined);
   let sortedChars = Array.from(uniqueChars).sort();
-  return sortedChars.join('')
-//   let sorted = combined.split("").sort().join("");
-//   for (let i = 0; i < sorted.length; i++) {
-//     let char = sorted[i];
-//     if (result.indexOf(char) === -1) {
-//       result += char;
-//     }
-//   }
-//   return result;
+  return sortedChars.join("");
+  //   let sorted = combined.split("").sort().join("");
+  //   for (let i = 0; i < sorted.length; i++) {
+  //     let char = sorted[i];
+  //     if (result.indexOf(char) === -1) {
+  //       result += char;
+  //     }
+  //   }
+  //   return result;
 }
 console.log(longestString(str1, str2)); //➞ "abdehimrstu"
 // Contains sorted and distinct letters of the given strings.
