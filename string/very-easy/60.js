@@ -7,17 +7,26 @@
 
 // Examples
 function cleanUpArray(arr) {
-  return arr.reduce(
-    (acc, cur) => {
-      if (cur % 2 === 0) {
-        acc[0].push(+cur);
-      } else {
-        acc[1].push(+cur);
-      }
-      return acc;
-    },
-    [[], []]
-  );
+  let result = [[], []];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      result[0].push(+arr[i]);
+    } else {
+      result[1].push(+arr[i]);
+    }
+    return result;
+  }
+  // return arr.reduce(
+  //   (acc, cur) => {
+  //     if (cur % 2 === 0) {
+  //       acc[0].push(+cur);
+  //     } else {
+  //       acc[1].push(+cur);
+  //     }
+  //     return acc;
+  //   },
+  //   [[], []]
+  // );
 }
 console.log(cleanUpArray(["8"])); //➞ [[8], []]
 console.log(cleanUpArray(["11"])); //➞ [[], [11]]
