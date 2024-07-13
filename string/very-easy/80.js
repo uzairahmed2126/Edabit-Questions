@@ -11,15 +11,22 @@
 
 // Examples
 function hammingDistance(str1, str2) {
-  let differChar = "";
+  //   let splited1 = str1.split("");
+  //   return splited1.reduce((acc, cur, index) => {
+  //     if (cur !== str2[index]) {
+  //       acc++;
+  //     }
+  //     return acc;
+  //   }, 0);
+  let differChar = 0;
   for (let i = 0; i < str1.length; i++) {
     let char1 = str1[i];
     let char2 = str2[i];
     if (char1 !== char2) {
-      differChar += char2;
+      differChar++;
     }
   }
-  return differChar.length;
+  return differChar;
 }
 console.log(hammingDistance("abcde", "bcdef")); //➞ 5
 console.log(hammingDistance("abcde", "abcde")); //➞ 0
