@@ -3,13 +3,23 @@
 
 // Examples
 function spelling(str) {
-  //   let arr = [];
-  //   let string = "";
-  //   for (let i = 0; i < str.length; i++) {
-  //     string += str[i];
-  //     arr.push(string);
-  //   }
-  //   return arr;
+  // let arr = [];
+  // let string = "";
+  // for (let i = 0; i < str.length; i++) {
+  //   string += str[i];
+  //   arr.push(string);
+  // }
+  // return arr;
+  let splited = str.split("");
+  let maped = splited.reduce(
+    (acc, cur) => {
+      let current = (acc[0] += cur);
+      acc.push(current);
+      return acc;
+    },
+    [""]
+  );
+  return maped.slice(1, splited.length + 1);
 }
 console.log(spelling("bee")); //➞ ["b", "be", "bee"]
 
