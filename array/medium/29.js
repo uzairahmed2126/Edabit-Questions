@@ -5,13 +5,19 @@
 
 // Examples
 function progressDays(arr) {
-  let count = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] < arr[i + 1]) {
-      count++;
+  //   let count = 0;
+  //   for (let i = 0; i < arr.length; i++) {
+  //     if (arr[i] < arr[i + 1]) {
+  //       count++;
+  //     }
+  //   }
+  //   return count;
+  return arr.reduce((acc, cur,index) => {
+    if (arr[index] < arr[index+1]) {
+      acc++;
     }
-  }
-  return count;
+    return acc
+  }, 0);
 }
 console.log(progressDays([3, 4, 1, 2])); //➞ 2
 // There are two progress days, (3->4) and (1->2)
