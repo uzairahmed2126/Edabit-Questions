@@ -3,40 +3,48 @@
 
 // Examples
 function identicalFilter(arr) {
+  // let result = [];
+  // for (let i = 0; i < arr.length; i++) {
+  //   let isTrue = 1;
+  //   for (let j = 0; j < arr[i].length; j++) {
+  //     if (arr[i][0] !== arr[i][j]) {
+  //       isTrue = 0;
+  //     }
+  //   }
+  //   if (isTrue) {
+  //     result.push(arr[i]);
+  //   }
+  // }
+  // return result;
+
   //   let result = [];
   //   for (let i = 0; i < arr.length; i++) {
-  //     // if (arr[i].repeat(arr[i][i], arr[i].length)) {
-  //     //   result.push(arr[i]);
-  //     // }
-
+  //     let firstChar = arr[i][0];
+  //     let isIdentical = true;
+  //     for (let j = 1; j < arr[i].length; j++) {
+  //       if (arr[i][j] !== firstChar) {
+  //         isIdentical = false;
+  //         break;
+  //       }
+  //     }
+  //     if (isIdentical) {
+  //       result.push(arr[i]);
+  //     }
   //   }
   //   return result;
-  //   const areAllCharactersSame = (str) => {
-  //     const firstChar = str[0];
-  //     for (let char of str) {
-  //         if (char !== firstChar) {
-  //             return false;
-  //         }
-  //     }
-  //     return true;
-  //     // return new Set(str).size === 1;
-  //   };
-  //   return arr.filter(areAllCharactersSame);
-  let result = [];
-  for (let i = 0; i < arr.length; i++) {
-    let firstChar = arr[i][0];
-    let isIdentical = true;
-    for (let j = 1; j < arr[i].length; j++) {
-      if (arr[i][j] !== firstChar) {
-        isIdentical = false;
-        break;
+  return arr.reduce((acc, cur) => {
+    const checkChar = cur[0];
+    let isTrue = 1;
+    for (let i = 0; i < cur.length; i++) {
+      if (checkChar !== cur[i]) {
+        isTrue = 0;
       }
     }
-    if (isIdentical) {
-      result.push(arr[i]);
+    if (isTrue) {
+      acc.push(cur);
     }
-  }
-  return result;
+    return acc;
+  }, []);
 }
 console.log(identicalFilter(["aaaaaa", "bc", "d", "eeee", "xyz"]));
 //➞ ["aaaaaa", "d", "eeee"]
