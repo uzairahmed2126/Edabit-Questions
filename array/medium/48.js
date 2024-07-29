@@ -32,19 +32,45 @@ function identicalFilter(arr) {
   //     }
   //   }
   //   return result;
-  return arr.reduce((acc, cur) => {
-    const checkChar = cur[0];
-    let isTrue = 1;
-    for (let i = 0; i < cur.length; i++) {
-      if (checkChar !== cur[i]) {
-        isTrue = 0;
+  // return arr.reduce((acc, cur) => {
+  //   const checkChar = cur[0];
+  //   let isTrue = 1;
+  //   for (let i = 0; i < cur.length; i++) {
+  //     if (checkChar !== cur[i]) {
+  //       isTrue = 0;
+  //     }
+  //   }
+  //   if (isTrue) {
+  //     acc.push(cur);
+  //   }
+  //   return acc;
+  // }, []);
+  // let result = [];
+  // for (let i = 0; i < arr.length; i++) {
+  //   let firstChar = arr[i][0];
+  //   let splited = arr[i].split("");
+  //   if (splited.every((char) => char === firstChar)) {
+  //     result.push(arr[i]);
+  //   }
+  // }
+  // return result;
+  //   return arr.filter(str => {
+  //     return str.split('').every(char => char === str[0]);
+  // });
+  let ans = [];
+  for (let i = 0; i < arr.length; i++) {
+    let char = arr[i][0];
+    let bool = 1;
+    for (let j = 0; j < arr[i].length; j++) {
+      if (char !== arr[i][j]) {
+        bool = 0;
       }
     }
-    if (isTrue) {
-      acc.push(cur);
+    if (bool) {
+      ans.push(arr[i]);
     }
-    return acc;
-  }, []);
+  }
+  return ans;
 }
 console.log(identicalFilter(["aaaaaa", "bc", "d", "eeee", "xyz"]));
 //➞ ["aaaaaa", "d", "eeee"]
