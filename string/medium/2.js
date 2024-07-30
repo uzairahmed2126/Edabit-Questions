@@ -14,6 +14,7 @@ function removeLeadingTrailing(str) {
   //   }
   // }
   // return result
+//   return parseFloat(str).toString()
   const result = String(Math.abs(str));
   return result;
 }
