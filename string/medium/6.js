@@ -12,7 +12,8 @@ function capToFront(str) {
       }
     }
   }
-  return splited.join('');
+  return splited.sort().join('')
+//   return splited.join('');
 }
 console.log(capToFront("hApPy")); //➞ "APhpy"
 
