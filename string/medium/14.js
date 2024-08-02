@@ -1,35 +1,36 @@
-// Reverse Words Starting With a Particular Letter
-// Write a function that reverses all the words in a sentence that start with a particular letter.
+// Capitalize the First Letter of Each Word
+// Create a function that takes a string as an argument and converts the first character of each word to uppercase. Return the newly formatted string.
 
 // Examples
-function specialReverse(str, char) {
-  let splited = str.split(" ");
-  let res = [];
-  for (let i = 0; i < splited.length; i++) {
-    if (splited[i][0].match(char)) {
-      res.push(splited[i].split("").reverse().join(""));
-    } else {
-      res.push(splited[i]);
-    }
+function makeTitle(str) {
+  let result = [];
+  let arr = str.split(" ");
+  for (let i = 0; i < arr.length; i++) {
+    const firstChar = arr[i][0];
+    const word = arr[i];
+    result.push(word.replace(firstChar, firstChar.toUpperCase()));
   }
-  return res.join(' ');
-  // return splited.reduce((acc,cur)=>{
-  //   if(cur[0]===char) {
-  //     acc.push(cur.split('').reverse().join(''));
-  //   }else {
-  //     acc.push(cur)
+  return result.join(" ");
+  //   return arr.reduce((acc, cur) => {
+  //     acc.push(cur[0].toUpperCase() + cur.slice(1));
+  //     return acc;
+  //   }, []);
+  //   return arr.map((item) => item[0].toUpperCase() + item.slice(1));
+  //   for (let i = 0; i < arr.length; i++) {
+  //     const firstChar = arr[i][0];
+  //     const word = arr[i];
+  //     result.push(firstChar.toUpperCase() + word.slice(1));
   //   }
-  //   return acc
-  // },[]).join(' ');
+  //   return result;
+  // return str
 }
-console.log(specialReverse("word searches are super fun", "s"));
-//➞ "word sehcraes are repus fun"
+console.log(makeTitle("This is a title")); //➞ "This Is A Title"
 
-console.log(specialReverse("first man to walk on the moon", "m"));
-//➞ "first nam to walk on the noom"
+console.log(makeTitle("capitalize every word")); //➞ "Capitalize Every Word"
 
-console.log(specialReverse("peter piper picked pickled peppers", "p"));
-//➞ "retep repip dekcip delkcip sreppep"
+console.log(makeTitle("I Like Pizza")); //➞ "I Like Pizza"
+
+console.log(makeTitle("PIZZA PIZZA PIZZA")); //➞ "PIZZA PIZZA PIZZA"
 // Notes
-// Reverse the words themselves, not the entire sentence.
-// All characters in the sentence will be in lower case.
+// You can expect a valid string for each test case.
+// Some words may contain more than one uppercase letter (see example #4).

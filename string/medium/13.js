@@ -1,36 +1,25 @@
-// Capitalize the First Letter of Each Word
-// Create a function that takes a string as an argument and converts the first character of each word to uppercase. Return the newly formatted string.
+// The DECIMATOR
+// Write a DECIMATOR function which takes a string and decimates it (i.e. it removes the last 1/10 of the characters).
+
+// Always round up: if the string has 21 characters, 1/10 of the characters would be 2.1 characters, hence the DECIMATOR removes 3 characters. The DECIMATOR shows no mercy!
 
 // Examples
-function makeTitle(str) {
-  let result = [];
-  let arr = str.split(" ");
-  for (let i = 0; i < arr.length; i++) {
-    const firstChar = arr[i][0];
-    const word = arr[i];
-    result.push(word.replace(firstChar, firstChar.toUpperCase()));
+function DECIMATOR(str) {
+  let decimates = str.length - Math.ceil(str.length / 10);
+  let result = "";
+  for (let i = 0; i < decimates; i++) {
+    result += str[i];
   }
-  return result.join(" ");
-  //   return arr.reduce((acc, cur) => {
-  //     acc.push(cur[0].toUpperCase() + cur.slice(1));
-  //     return acc;
-  //   }, []);
-  //   return arr.map((item) => item[0].toUpperCase() + item.slice(1));
-  //   for (let i = 0; i < arr.length; i++) {
-  //     const firstChar = arr[i][0];
-  //     const word = arr[i];
-  //     result.push(firstChar.toUpperCase() + word.slice(1));
-  //   }
-  //   return result;
-  // return str
+  return result;
+  // return str.slice(0, decimates);
 }
-console.log(makeTitle("This is a title")); //➞ "This Is A Title"
-
-console.log(makeTitle("capitalize every word")); //➞ "Capitalize Every Word"
-
-console.log(makeTitle("I Like Pizza")); //➞ "I Like Pizza"
-
-console.log(makeTitle("PIZZA PIZZA PIZZA")); //➞ "PIZZA PIZZA PIZZA"
+console.log(DECIMATOR("1234567890")); //➞ "123456789"
+// 10 characters, removed 1.
+console.log(DECIMATOR("1234567890AB")); //➞ "1234567890"
+// 12 characters, removed 2.
+console.log(DECIMATOR("123")); //➞ "12"
+// 3 characters, removed 1.
+console.log(DECIMATOR("123456789012345678901")); //➞ "123456789012345678"
+// 21 characters, removed 3.
 // Notes
-// You can expect a valid string for each test case.
-// Some words may contain more than one uppercase letter (see example #4).
+// Make sure to remove characters from the end of the string.
