@@ -1,25 +1,35 @@
-// The DECIMATOR
-// Write a DECIMATOR function which takes a string and decimates it (i.e. it removes the last 1/10 of the characters).
+// Xs and Os, Nobody Knows
+// Create a function that takes a string, checks if it has the same number of x's and o's and returns either true or false.
 
-// Always round up: if the string has 21 characters, 1/10 of the characters would be 2.1 characters, hence the DECIMATOR removes 3 characters. The DECIMATOR shows no mercy!
-
+// Return a boolean value (true or false).
+// Return true if the amount of x's and o's are the same.
+// Return false if they aren't the same amount.
+// The string can contain any character.
+// When "x" and "o" are not in the string, return true.
 // Examples
-function DECIMATOR(str) {
-  let decimates = str.length - Math.ceil(str.length / 10);
-  let result = "";
-  for (let i = 0; i < decimates; i++) {
-    result += str[i];
+function XO(str) {
+  let countX = 0;
+  let countO = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i].toLowerCase() === "x") {
+      countX++;
+    } else if (str[i].toLowerCase() === "o") {
+      countO++;
+    }
   }
-  return result;
-  return str.slice(0, decimates);
+  return countO === countX;
 }
-console.log(DECIMATOR("1234567890")); //➞ "123456789"
-// 10 characters, removed 1.
-console.log(DECIMATOR("1234567890AB")); //➞ "1234567890"
-// 12 characters, removed 2.
-console.log(DECIMATOR("123")); //➞ "12"
-// 3 characters, removed 1.
-console.log(DECIMATOR("123456789012345678901")); //➞ "123456789012345678"
-// 21 characters, removed 3.
+console.log(XO("ooxx")); //➞ true
+
+console.log(XO("xooxx")); //➞ false
+
+console.log(XO("ooxXm")); //➞ true
+// Case insensitive.
+
+console.log(XO("zpzpzpp")); //➞ true
+// Returns true if no x and o.
+
+console.log(XO("zzoo")); //➞ false
 // Notes
-// Make sure to remove characters from the end of the string.
+// Remember to return true if there aren't any x's or o's.
+// Must be case insensitive.
