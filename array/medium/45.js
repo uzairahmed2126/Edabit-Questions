@@ -4,7 +4,9 @@
 // Examples
 function transformUpvotes(str) {
   let splited = str.split(" ");
-  return splited.map((item) => item.replace("k", "") * 1000);
+  return splited.map((item) =>
+    !item.includes("k") ? item * 1 : item.replace("k", "") * 1000
+  );
   //   let result = [];
   //   for (let i = 0; i < splited.length; i++) {
   //     const num = parseFloat(splited[i]);
