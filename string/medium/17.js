@@ -6,13 +6,15 @@
 //   - "A" char code is: 65
 //   - "a" char code is: 97
 function counterpartCharCode(char) {
-  if (char.toLowerCase() !== char.toUpperCase()) {
-    if (char === char.toLowerCase()) {
-      return char.toUpperCase().charCodeAt();
-    } else {
-      return char.toLowerCase().charCodeAt();
-    }
-  }
+  //   if (char.toLowerCase() !== char.toUpperCase()) {
+  //     if (char === char.toLowerCase()) {
+  //       return char.toUpperCase().charCodeAt();
+  //     } else {
+  //       return char.toLowerCase().charCodeAt();
+  //     }
+  //   }
+  const chars = { A: 97, a: 65 };
+  return chars[char];
 }
 console.log(counterpartCharCode("A")); //➞ 97
 
