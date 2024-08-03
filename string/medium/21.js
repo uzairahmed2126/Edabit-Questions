@@ -3,15 +3,17 @@
 
 // Examples
 function isIsogram(str) {
-  let chars = str.split("");
-  const char = ["i", "s", "o", "g", "r", "a", "m"];
-  //   return chars.reduce((acc, cur) => (char.includes(cur) ? true : false), 0);
-  for (let i = 0; i < chars.length; i++) {
-    if (char[i] === chars[i]) {
-      return true;
-    }
-  }
-  return false;
+  let chars = str.toLowerCase().split("").sort();
+  const char = ["a", "g", "i", "m", "o", "r", "s"];
+  // return chars.reduce((acc, cur) => (char.includes(cur.toLowerCase()) ? true : false), 0);
+  //   str = str.toLowerCase();
+  //   let letters = new Set();
+  //   for (let i = 0; i < chars.length; i++) {
+  //     return char.includes(chars[i].toLowerCase()) ? true : false;
+  //   }
+  return chars.every((char, index, arr) => {
+    return arr.indexOf(char) === arr.lastIndexOf(char);
+  });
 }
 console.log(isIsogram("Algorism")); //➞ true
 
