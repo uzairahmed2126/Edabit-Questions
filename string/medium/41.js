@@ -52,9 +52,15 @@ function identicalFilter(arr) {
   //   });
 }
 function identicalFilter(arr) {
-  return arr.filter((str) => {
-    return [...str].every((char) => char === str[0]);
-  });
+  let res = [];
+  for (let i = 0; i < arr.length; i++) {
+    let word = arr[i];
+    let firstChar = word[0];
+    if (word.split("").every((char) => char === firstChar)) {
+      res.push(word);
+    }
+  }
+  return res;
 }
 console.log(identicalFilter(["aaaaaa", "bc", "d", "eeee", "xyz"]));
 //➞ ["aaaaaa", "d", "eeee"]
