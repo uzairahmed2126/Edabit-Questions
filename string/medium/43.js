@@ -3,17 +3,27 @@
 
 // Examples
 function dashed(str) {
-  let res = [];
+  // let res = [];
   let splited = str.split("");
   let vowel = "aeiou";
-  for (let i = 0; i < splited.length; i++) {
-    if (vowel.includes(splited[i].toLowerCase())) {
-      res.push("-" + splited[i] + "-");
-    } else {
-      res.push(splited[i]);
-    }
-  }
-  return res.join("");
+  return splited
+    .reduce((acc, cur) => {
+      if (vowel.includes(cur.toLowerCase())) {
+        acc.push("-" + cur + "-");
+      } else {
+        acc.push(cur);
+      }
+      return acc;
+    }, [])
+    .join("");
+  // for (let i = 0; i < splited.length; i++) {
+  //   if (vowel.includes(splited[i].toLowerCase())) {
+  //     res.push("-" + splited[i] + "-");
+  //   } else {
+  //     res.push(splited[i]);
+  //   }
+  // }
+  // return res.join("");
 }
 console.log(dashed("Edabit")); //➞ "-E-d-a-b-i-t"
 console.log(dashed("Carpe Diem")); //➞ "C-a-rp-e- D-i--e-m"
