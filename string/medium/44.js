@@ -8,16 +8,19 @@
 
 // Examples
 function addParityBit(str) {
-  let one = 0;
-  let zero = 0;
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] === "1") {
-      one++;
-    } else {
-      zero++;
-    }
-  }
-  return one % 2 !== 0 && zero % 2 === 0 ? str + 1 : str + 0;
+  const countOfOnes = str.split("1").length-1;
+  const parityBit = countOfOnes % 2 === 0 ? "0" : "1";
+  return str + parityBit;
+  //   let one = 0;
+  //   let zero = 0;
+  //   for (let i = 0; i < str.length; i++) {
+  //     if (str[i] === "1") {
+  //       one++;
+  //     } else {
+  //       zero++;
+  //     }
+  //   }
+  //   return one % 2 !== 0 && zero % 2 === 0 ? str + 1 : str + 0;
 }
 console.log(addParityBit("1011011")); //➞ "10110111"
 // There are five 1's.
