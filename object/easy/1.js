@@ -3,15 +3,16 @@
 
 // Assume that the following array of drink objects needs to be sorted:
 
-drinks = [
+// The output of the sorted drinks object will be:
+function sortDrinkByPrice(drinks) {
+  //   return [drinks[1], drinks[0]];
+  // return drinks.sort((a, b) => a.price - b.price);
+  return drinks.sort((a, b) => (a.name - b.name ? 1 : -1));
+}
+let drinks = [
   { name: "lemonade", price: 50 },
   { name: "lime", price: 10 },
 ];
-// The output of the sorted drinks object will be:
-function sortDrinkByPrice() {
-  //   return [drinks[1], drinks[0]];
-  return drinks.sort((a, b) => (a.name - b.name ? 1 : -1));
-}
 // Examples
 console.log(sortDrinkByPrice(drinks)); //➞ [{name: "lime", price: 10}, {name: "lemonade", price: 50}]
 // Notes
