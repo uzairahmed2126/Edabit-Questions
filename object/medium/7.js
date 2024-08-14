@@ -16,13 +16,6 @@ function millionsRounding(arr) {
   return result;
 }
 function millionsRounding(arr) {
-  //   let cities = arr[i][0];
-  //   let totalPopulation = 1000000;
-  //   let population = arr[i][1];
-  //   result.push(cities);
-  //   if (population) {
-  //     result.push(Math.round(population / totalPopulation) * totalPopulation);
-  //   }
   return arr.map((item) => {
     let population = item[1];
     let cities = item[0];
