@@ -15,16 +15,13 @@
 //   }
 // }
 function lonelyInteger(arr) {
-  //   let len = arr.length;
-  //   for (let i = 0; i < len; i++) {
-  //     if (arr[i] > 0) {
-  //       let idx = arr.indexOf(-arr[i]);
-  //       if (idx === -1) return arr[i];
-  //     } else {
-  //       let idx = arr.indexOf(Math.abs(arr[i]));
-  //       if (idx === -1) return arr[i];
-  //     }
-  //   }
+  let len = arr.length;
+  for (let i = 0; i < len; i++) {
+    let element = arr[i];
+    if (arr.indexOf(-element) == -1) {
+      return arr[i];
+    }
+  }
 }
 console.log(lonelyInteger([1, -1, 2, -2, 3])); //➞ 3
 // 3 has no matching negative appearance.
