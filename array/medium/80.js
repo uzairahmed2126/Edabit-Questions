@@ -18,7 +18,7 @@ function lonelyInteger(arr) {
   let len = arr.length;
   for (let i = 0; i < len; i++) {
     let element = arr[i];
-    if (arr.indexOf(-element) == -1) {
+    if (arr.indexOf(-element)===-1) {
       return arr[i];
     }
   }
