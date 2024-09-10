@@ -8,12 +8,15 @@ function backToHome(str) {
     if (obj[str[i]] == undefined) obj[str[i]] = 1;
     else obj[str[i]]++;
   }
-  for (const element in obj) {
-    if (obj["S"] !== obj[element]) {
-      return false;
-    }
-  }
-  return true;
+  let values = Object.values(obj);
+  let compareVal = values[0];
+  return values.every((item) => compareVal === item);
+  //   for (const element in obj) {
+  //     if (obj["S"] !== obj[element]) {
+  //       return false;
+  //     }
+  //   }
+  //   return true;
 }
 // function backToHome(str) {
 //   let N = 0;
