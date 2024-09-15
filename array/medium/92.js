@@ -18,14 +18,19 @@
 //   }
 //   return result;
 // }
+// function numObj(arr) {
+//   return arr.reduce((acc, cur) => {
+//     let obj ={};
+//     let char = String.fromCharCode(cur);
+//     obj[cur] = char;
+//     acc.push(obj);
+//     return acc;
+//   }, []);
+// }
 function numObj(arr) {
-  return arr.reduce((acc, cur) => {
-    let obj ={};
-    let char = String.fromCharCode(cur);
-    obj[cur] = char;
-    acc.push(obj);
-    return acc;
-  }, []);
+  return arr.map((num) => {
+    return { [num]: String.fromCharCode(num) };
+  });
 }
 console.log(numObj([118, 117, 120])); //➞ [{'118':'v'}, {'117':'u'}, {'120':'x'}]
 console.log(numObj([101, 121, 110, 113, 103])); //➞ [{'101':'e'}, {'121':'y'}, {'110':'n'}, {'113':'q'}, {'103':'g'}]
