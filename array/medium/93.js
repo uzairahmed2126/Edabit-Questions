@@ -6,15 +6,23 @@
 // If win equals true, end the list with Pong!.
 // If win equals false, end with Ping! instead.
 // Examples
+// function pingPong(arr, win) {
+//   let result = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     result.push(arr[i], "Pong!");
+//   }
+//   if (!win) {
+//     result.pop();
+//   }
+//   return result;
+// }
 function pingPong(arr, win) {
-  let result = [];
-  for (let i = 0; i < arr.length; i++) {
-    result.push(arr[i], "Pong!");
-  }
-  if (!win) {
-    result.pop();
-  }
-  return result;
+  let compare = arr.reduce((acc, cur) => {
+    acc.push(cur, "Pong!");
+    return acc;
+  }, []);
+  if (!win) compare.pop();
+  return compare;
 }
 console.log(pingPong(["Ping!"], true)); //➞ ["Ping!", "Pong!"]
 console.log(pingPong(["Ping!", "Ping!"], false)); //➞ ["Ping!", "Pong!", "Ping!"]
