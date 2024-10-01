@@ -19,20 +19,9 @@
 //   }
 //   return result;
 // }
-// function arrEleSum(arr) {
-//   let result = [];
-//   let sum = 0;
-//   for (let i = 0; i < arr.length; i++) {
-//     sum += arr[i];
-//   }
-//   for (let i = 0; i < arr.length; i++) {
-//     result.push(sum - arr[i]);
-//   }
-//   return result;
-// }
 function arrEleSum(arr) {
-  let sum = 0;
   let result = [];
+  let sum = 0;
   for (let i = 0; i < arr.length; i++) {
     sum += arr[i];
   }
