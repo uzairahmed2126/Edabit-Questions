@@ -17,8 +17,6 @@ function flash(arr) {
       result = first / second;
       if (!Number.isInteger(result)) {
         return result.toFixed(2);
-      } else {
-        return result;
       }
       break;
     case "+":
